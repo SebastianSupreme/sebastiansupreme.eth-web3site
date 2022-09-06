@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Profile icon-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm">
+        <!--Profile picture-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreihibmr57uq5ltibq2szrad4ko4py26mb2oosbnwycoea5qal2bfhu">
+        <!--Research documents-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i">
+        <!--Research images-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreidcez7zlrpwaqezf6escpfvblpid7cn7atbbgbgov4gijhrdorkae">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreibjegy5gg4mhkuuvlka5f3etmtkyrly5lmqms4catvzubzujmhc74">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreiftrcokordt5rzuyuhrcsglj5z67r6it5l5owar64crlrpyqeneve">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreihyula4liu346ocidesp4qugcxeuvr6wxxdd23b2kh3stbuiikmaq">
+        <!--Text fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <title>sebastiansupreme.eth</title>
+        <link rel="icon" type="image/x-icon" href="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm">
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+                
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: #040d15;
+                color: #fff;
+                height: 100vh;
+                line-height: 1.6;
+                overflow: hidden;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 0%;/*percentage controls left shift*/
+            }
+
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+
+            .container {
+                width: 100%;
+                height: 100%;
+                /* CSS Smooth Scroll */
+                overflow-y:scroll; 
+                scroll-behavior: smooth;
+                scroll-snap-type: y mandatory;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                z-index: 1;
+                display: flex;
+                width: 100%;
+                height: 60px;
+                background: rgba(0,0,0,0);
+            }
+
+            .logo {
+                position: fixed;
+                left: 60px;/*60*/
+                top: 16px;/*16*/
+                color: #fff;
+                text-decoration: none;
+                font-size: 1em;
+                text-transform: lowercase;
+                letter-spacing: 2px;
+            }
+
+            .image {
+                position: fixed; 
+                top:0; 
+                left:0;
+                scale: 0.6;
+            }
+
+            .navbar ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .navbar ul li {
+                list-style: none;
+                margin-left: 20px;
+                margin: 0 1rem;
+                padding: 1rem;
+            }
+
+            .navbar ul li a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 6px 15px;
+                color: #fff;
+                border-radius: 20px;
+            }
+                
+            .navbar ul li a:hover {
+                background: #fff;
+                color: #040d15;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100vh;
+                
+                /* Scroll Snap */
+                scroll-snap-align: center;
+            }
+
+            section#home a {
+                position: sticky;
+                display: inline-block;
+                padding: 12px 36px;
+                margin: 10px 0;
+                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                overflow: hidden;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5), 0 0 0 0 rgba(0, 238, 255, 0.5);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: linear-gradient(90deg, #0011ff, #00ddff);
+            }
+
+            section#home a:hover {
+                transform: translate(0, -6px);
+                box-shadow: 10px -10px 25px 0 rgba(0, 123, 255, 0.5), -10px 10px 25px 0 rgba(0, 238, 255, 0.5);
+            }
+
+            section#home span {
+                position: absolute;
+                background: #fff;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                border-radius: 50%;
+                animation: animate 0.5s linear infinite;
+            }
+
+            @keyframes animate {
+                0%
+                {
+                    width: 0px;
+                    height: 0px;
+                    opacity: 0.5;
+                }
+                100%
+                {
+                    width: 500px;
+                    height: 500px;
+                    opacity: 0;
+                }
+            }
+
+            section#home {
+                background: #040d15 no-repeat center center/cover;
+            }
+
+            section#home .image {
+                position: sticky;
+            }
+
+            section#home h1 {
+                font-size: 3em;
+            }
+
+            section#research {
+                background: #040d15 no-repeat center center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+            }
+
+            section#research p {
+                font-size: small;
+            }
+
+            section#research h1 {
+                display: block;
+                font-size: 2em;
+                margin: 0;
+            }
+
+            section#research .cover {
+                width: 1250px;
+                height: 300px;
+                display: flex;
+            }
+
+            section#research .cover2 {
+                width: 1250px;
+                height: 300px;
+                display: flex;
+            }
+
+            section#research .box {
+                width: 1250px;
+                height: 300px;
+            }
+
+            section#research .researchimage:hover {
+                cursor: pointer;
+            }
+
+            section#links {
+                background: #040d15 no-repeat center center/cover;
+            }
+
+            section#links a {
+                position: sticky;
+                display: inline-block;
+                width: 50%;
+                padding: 12px 36px;
+                margin: 10px 0;
+                color: #fff;
+                text-decoration: none;
+                overflow: hidden;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                background: #040d15;
+                border: 2px solid #fff;
+                animation: animate3 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            section#links a:hover {
+                background: #fff;
+                color: #040d15;
+                animation: animate2 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes animate2 {
+                0% {
+                    width: 50%;
+                }
+
+                100% {
+                    width: 49%;
+                }
+            }
+
+            @keyframes animate3 {
+                0% {
+                    width: 49%;
+                }
+
+                100% {
+                    width: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+        </script>
+        <div class="container">
+            <header>
+                <b href="#" class="logo">sebastiansupreme.eth</b>
+                <img class="image" src="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm" id="pfp">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#links">Links</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="home">
+                <div>
+                <img class="image" src="https://ipfs.io/ipfs/bafkreihibmr57uq5ltibq2szrad4ko4py26mb2oosbnwycoea5qal2bfhu" id="homeimage">
+                </div>
+                <h1>sebastiansupreme.eth</h1>
+                <h2><br></h2>
+                <h2>Welcome to my web3site.</h2>
+                <h4>Since you're already here, please consider donating. Your help is much appreciated.</h4>
+                <h3><br></h3>
+
+                <a id="copybutton" href="#">Copy Address</a>
+               <!--<a href="#">Button 2</a>-->
+                <script type="text/javascript">
+                    const button = document.getElementById("copybutton");
+                        button.addEventListener('click', function(e){
+                            
+                            /*copy ethereum address*/
+                            let addressVal = "0x4a7C7eA011d2F38F51f99AE27A8fc9731a6DC4D1";
+                            let inputField = document.createElement('input');
+                            inputField.setAttribute('value', addressVal);
+                            document.body.appendChild(inputField);
+                            inputField.select();
+                            document.execCommand("copy");
+                            inputField.parentNode.removeChild(inputField);
+                            button.textContent = "Copied!";
+
+                            /*ripple effect on click*/
+                            let x = e.clientX - e.target.offsetLeft;
+                            let y = e.clientY - e.target.offsetTop;
+                            let ripples = document.createElement('span');
+                            ripples.style.left = x + 'px';
+                            ripples.style.top = y + 'px';
+                            this.appendChild(ripples);
+                            setTimeout(() => {
+                                ripples.remove()
+                                button.textContent = "Copy Address";
+                            }, 500);
+                        })
+                </script>
+            </section>
+            <section id="research">
+                <h2><br></h2>
+                <h3><br></h3>
+                <h2>My Research</h2>
+                <h2><br></h2>
+                <div class="cover">
+                    <div class="box">
+                        <img class="researchimage" id="theory" src="https://ipfs.io/ipfs/bafkreidcez7zlrpwaqezf6escpfvblpid7cn7atbbgbgov4gijhrdorkae">
+                        <h2>The Theory of Science</h2>
+                        <p>IPFS CIDs:</p>
+                        <p>bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju</p>
+                        <p>QmZC9UPFQyzW1YkoTMGNgQ2Jt1Gh4cZFQ3rRJ7dzd6uXfh</p>
+                    </div>
+                    <div class="box">
+                        <img class="researchimage" id="levitation" src="https://ipfs.io/ipfs/bafkreibjegy5gg4mhkuuvlka5f3etmtkyrly5lmqms4catvzubzujmhc74">
+                        <h2>Electromagnetic Levitation</h2>
+                        <p>IPFS CIDs:</p>
+                        <p>bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq</p>
+                        <p>Qme77ZFfgq2NSJRDrtFhRs78x8MgUdSRmTtQuDe8vp4h9Z</p>
+                    </div>
+                </div>
+                <div class="cover2">
+                    <div class="box">
+                        <img class="researchimage" id="coilgun" src="https://ipfs.io/ipfs/bafkreiftrcokordt5rzuyuhrcsglj5z67r6it5l5owar64crlrpyqeneve">
+                        <h2>Electromagnetic Coilgun</h2>
+                        <p>IPFS CIDs:</p>
+                        <p>bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u</p>
+                        <p>QmR1nULzHGwEhvqXVWNg9YqX4Fv7gA42qRFFda8xo4VPWw</p>
+                    </div>
+                    <div class="box">
+                        <img class="researchimage" id="842" src="https://ipfs.io/ipfs/bafkreihyula4liu346ocidesp4qugcxeuvr6wxxdd23b2kh3stbuiikmaq">
+                        <h2>842 Generation 2</h2>
+                        <p>IPFS CIDs:</p>
+                        <p>bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i</p>
+                        <p>QmbGZW2BMLuubmKTc8ex6v8wFbBmzjegJE7W7VU4p24A5t</p>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    const thumbnails = document.querySelectorAll(".researchimage");
+                    thumbnails.forEach(tmb => {
+                        tmb.addEventListener('click', function(e){
+                            if(tmb.id.toString() == "theory"){
+                                window.open("https://ipfs.io/ipfs/bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju", '_blank').focus();
+                            } else if(tmb.id.toString() == "levitation"){
+                                window.open("https://ipfs.io/ipfs/bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq", '_blank').focus();
+                            } else if(tmb.id.toString() == "coilgun"){
+                                window.open("https://ipfs.io/ipfs/bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u", '_blank').focus();
+                            } else if(tmb.id.toString() == "842"){
+                                window.open("https://ipfs.io/ipfs/bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i", '_blank').focus();
+                            }
+                        })
+                    })
+                </script>
+            </section>
+            <section id="links">
+                <h4><br></h4>
+                <h2><br>Links</h2>
+                <h4><br></h4>
+                <h3>Web2<br></h3>
+                <a class="link" id="medium" href="#">Medium</a>
+                <a class="link" id="youtube" href="#">YouTube</a>
+                <a class="link" id="twitter" href="#">Twitter</a>
+                <a class="link" id="github" href="#">GitHub</a>
+                <h4><br></h4>
+                <h3>Web3<br></h3>
+                <a class="link" id="mirror" href="#">Mirror</a>
+                <a class="link" id="opensea" href="#">Opensea</a>
+                <a class="link" id="coinbasenft" href="#">Coinbase NFT</a>
+
+                <script type="text/javascript">
+                    const linkbutton = document.querySelectorAll(".link");
+                    linkbutton.forEach(lnk => {
+                        lnk.addEventListener('click', function(e){
+                            if(lnk.id.toString() == "medium"){
+                                window.open("https://medium.com/@sebastiansupreme", '_blank').focus();
+                            } else if(lnk.id.toString() == "youtube"){
+                                window.open("https://www.youtube.com/channel/UCXgmOzx7t85pKOlQmztaz7w?sub_confirmation=1", '_blank').focus();
+                            } else if(lnk.id.toString() == "twitter"){
+                                window.open("https://twitter.com/sebas_supreme", '_blank').focus();
+                            } else if(lnk.id.toString() == "github"){
+                                window.open("https://github.com/SebastianSupreme", '_blank').focus();
+                            } else if(lnk.id.toString() == "mirror"){
+                                window.open("https://mirror.xyz/sebastiansupreme.eth", '_blank').focus();
+                            } else if(lnk.id.toString() == "opensea"){
+                                window.open("https://opensea.io/SebastianSupreme", '_blank').focus();
+                            } else if(lnk.id.toString() == "coinbasenft"){
+                                window.open("https://nft.coinbase.com/@sebastiansupreme", '_blank').focus();
+                            }
+                        })
+                    })
+                </script>
+            </section>
+        </div>
+    </body>
+
+</html>
