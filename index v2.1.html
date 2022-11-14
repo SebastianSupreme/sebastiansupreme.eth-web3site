@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <!---------------------sebastiansupreme.eth web3site v2.1 by Sebastian Köller (Sebastian Supreme)--------------------->
+
+
+    <!---------------------------------------------------HTML--------------------------------------------------->
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Profile icon-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm">
+        <!--Profile picture-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreihibmr57uq5ltibq2szrad4ko4py26mb2oosbnwycoea5qal2bfhu">
+        <!--Research documents-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i">
+        <!--Research images-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreidcez7zlrpwaqezf6escpfvblpid7cn7atbbgbgov4gijhrdorkae">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreibjegy5gg4mhkuuvlka5f3etmtkyrly5lmqms4catvzubzujmhc74">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreiftrcokordt5rzuyuhrcsglj5z67r6it5l5owar64crlrpyqeneve">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreihyula4liu346ocidesp4qugcxeuvr6wxxdd23b2kh3stbuiikmaq">
+        <!--Previous Version - v2.0-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafkreiepnsjntpdhzemtiiz5cm5ufqpb5gzmx7szxsr5jqiar4unmb77dm">
+        <!--Text fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Ethers.js library-->
+        <link rel="preconnect" href="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js">
+
+        <title>sebastiansupreme.eth</title>
+        <link rel="icon" type="image/x-icon" href="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm">
+        <!--Website icon for MetaMask-->
+        <link rel="shortcut icon" href="https://ipfs.io/ipfs/bafkreihibmr57uq5ltibq2szrad4ko4py26mb2oosbnwycoea5qal2bfhu" />
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+        <!---------------------------------------------------CSS--------------------------------------------------->
+
+
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+                
+            html, body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: #040d15;
+                color: #fff;
+                height: 100vh;
+                line-height: 1.6;
+                overflow: hidden;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100vh;
+                scroll-snap-align: center;
+            }
+
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+
+            
+            /*Header section ------------------------------------------------------------------------------------------------------*/
+
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 0%;/*percentage controls left shift*/
+            }
+
+            .container {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll; 
+                scroll-behavior: smooth;
+                scroll-snap-type: y proximity;
+            }
+
+            .page_container {
+                display: flex;
+            }
+
+            .cover {
+                width: 50%;
+                height: 100%;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                display: flex;
+                width: 100%;
+                height: 60px;
+                background: rgba(0,0,0,0);
+            }
+
+            .logo {
+                position: absolute;
+                left: 60px;
+                top: 16px;
+                color: #fff;
+                text-decoration: none;
+                font-size: 1em;
+                text-transform: lowercase;
+                letter-spacing: 2px;
+            }
+
+            .image {
+                position: absolute; 
+                top:0; 
+                left:0;
+                scale: 0.6;
+            }
+
+            .navbar ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .navbar ul li {
+                list-style: none;
+                margin-left: 20px;
+                margin: 0 1rem;
+                padding: 1rem;
+            }
+
+            .navbar ul li a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 6px 15px;
+                color: #fff;
+                border-radius: 20px;
+            }
+                
+            .navbar ul li a:hover {
+                background: #fff;
+                color: #040d15;
+            }
+
+            .connectbutton {
+                position: absolute;
+                right: 16px;
+                top: 10px;
+                z-index: 1;
+                display: inline-block;
+                padding: 7px 14px;
+                color: #fff;
+                text-decoration: none;
+                overflow: hidden;
+                font-size: 15px;
+                letter-spacing: 1px;
+                border-radius: 16px;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5), 0 0 0 0 rgba(0, 238, 255, 0.5);
+                transition: box-shadow 0.3s ease;
+                background: linear-gradient(90deg, #0011ff, #00ddff);
+            }
+
+            .connectbutton:hover {
+                box-shadow: 5px -5px 12px 0 rgba(0, 123, 255, 0.5), -5px 5px 12px 0 rgba(0, 238, 255, 0.5);
+            }
+
+
+            /*Home section ------------------------------------------------------------------------------------------------------*/
+
+
+            section#home {
+                background: #040d15 no-repeat center center/cover;
+            }
+            
+            section#home input {
+                padding: 5px;
+                border: 2px solid #00ddff;
+                border-radius: 4px;
+                outline: none;
+                resize: none;
+                text-align: center;
+            }
+
+            section#home input::placeholder {
+                text-align: right;
+            }
+
+            .no-spin::-webkit-inner-spin-button,
+            .no-spin::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .no-spin {
+                -moz-appearance:textfield;
+            }
+
+            section#home a {
+                position: sticky;
+                display: inline-block;
+                padding: 12px 36px;
+                margin: 10px 0;
+                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                overflow: hidden;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5), 0 0 0 0 rgba(0, 238, 255, 0.5);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: linear-gradient(90deg, #0011ff, #00ddff);
+            }
+
+            section#home a:hover {
+                transform: translate(0, -6px);
+                box-shadow: 10px -10px 25px 0 rgba(0, 123, 255, 0.5), -10px 10px 25px 0 rgba(0, 238, 255, 0.5);
+            }
+
+            section#home span {
+                position: absolute;
+                background: #fff;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                border-radius: 50%;
+                animation: animate 0.5s linear infinite;
+            }
+
+            @keyframes animate {
+                0%
+                {
+                    width: 0px;
+                    height: 0px;
+                    opacity: 0.5;
+                }
+                100%
+                {
+                    width: 500px;
+                    height: 500px;
+                    opacity: 0;
+                }
+            }
+
+            section#home .image {
+                position: sticky;
+            }
+
+            section#home h1 {
+                font-size: 3em;
+            }
+
+
+            /*Research section ------------------------------------------------------------------------------------------------------*/
+
+
+            section#research {
+                background: #040d15 no-repeat center center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+            }
+
+            section#research p {
+                font-size: small;
+            }
+
+            section#research a {
+                position: sticky;
+                font-size: small;
+                text-decoration: none;
+                overflow: hidden;
+                color: #00ddff;
+            }
+
+            section#research h1 {
+                display: block;
+                font-size: 2em;
+                margin: 0;
+            }
+
+            section#research .box {
+                width: 100%;
+                display:inline-block;
+                margin-bottom: 20px;
+            }
+
+            section#research .researchimage:hover {
+                cursor: pointer;
+            }
+
+
+            /*Links section ------------------------------------------------------------------------------------------------------*/
+
+
+            section#links {
+                background: #040d15 no-repeat center center/cover;
+            }
+
+            section#links a {
+                position: sticky;
+                display: inline-block;
+                width: 80%;
+                padding: 12px 36px;
+                margin: 10px 0;
+                color: #fff;
+                text-decoration: none;
+                overflow: hidden;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                background: #040d15;
+                border: 2px solid #fff;
+                animation: animate3 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            section#links a:hover {
+                background: #fff;
+                color: #040d15;
+                animation: animate2 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes animate2 {
+                0% {
+                    width: 80%;
+                }
+
+                100% {
+                    width: 78%;
+                }
+            }
+
+            @keyframes animate3 {
+                0% {
+                    width: 78%;
+                }
+
+                100% {
+                    width: 80%;
+                }
+            }
+
+            section#links .textlink {
+                position: sticky;
+                font-size: small;
+                text-decoration: none;
+                overflow: hidden;
+                color: #00ddff;
+            }
+
+            section#links .textlink:hover {
+                cursor: pointer;
+            }
+
+            section#links p {
+                position: sticky;
+                font-size: small;
+                text-decoration: none;
+                overflow: hidden;
+                color: white;
+            }
+
+        </style>
+    </head>
+
+
+    <!---------------------------------------------------HTML--------------------------------------------------->
+
+
+    <body>
+        <div class="container">
+
+
+            <!--Header section ------------------------------------------------------------------------------------------------------>
+
+
+            <header>
+                <img class="image" src="https://ipfs.io/ipfs/bafkreiagkrpbpbzpz53kuwsmkfmid5itajhhi4m5367vijbsxrfl2aokzm" id="pfp">
+                <b href="#" class="logo">sebastiansupreme.eth</b>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#links">Links</a></li>
+                    </ul>
+                </nav>
+
+                <a class="connectbutton" id="connectbutton" href="#">Connect Wallet</a>
+                
+            </header>
+
+
+            <!--Home section ------------------------------------------------------------------------------------------------------>
+
+
+            <section id="home">
+                <div>
+                <img class="image" src="https://ipfs.io/ipfs/bafkreihibmr57uq5ltibq2szrad4ko4py26mb2oosbnwycoea5qal2bfhu" id="homeimage">
+                </div>
+                <h1>sebastiansupreme.eth</h1>
+                <h2><br></h2>
+                <h2>Welcome to my web3site.</h2>
+                <h4>Since you're already here, please consider donating. Your support is much appreciated.</h4>
+                <h3><br><br></h3>
+                <form>
+                    <input id="donationInput" type="number" placeholder="ETH " class="no-spin">
+                </form>
+                <br>
+                <a id="donatebutton" href="#">Donate</a>
+
+            </section>
+
+
+            <!--Research section ------------------------------------------------------------------------------------------------------>
+
+
+            <section id="research">
+                <h2><br></h2>
+                <h2>My Advanced Research</h2>
+                <h2><br></h2>
+                <div class="page_container">
+                    <div class="cover">
+                        <div class="box">
+                            <img class="researchimage" id="theory" src="https://ipfs.io/ipfs/bafkreidcez7zlrpwaqezf6escpfvblpid7cn7atbbgbgov4gijhrdorkae">
+                            <h2>The Theory of Science</h2>
+                            <p>IPFS CIDs:</p>
+                            <a class="cid" id="theory_cid_v0" href="#">CIDv0</a><br>
+                            <a class="cid" id="theory_cid_v1" href="#">CIDv1</a>
+                        </div>
+                        <div class="box">
+                            <img class="researchimage" id="coilgun" src="https://ipfs.io/ipfs/bafkreiftrcokordt5rzuyuhrcsglj5z67r6it5l5owar64crlrpyqeneve">
+                            <h2>Electromagnetic Coilgun</h2>
+                            <p>IPFS CIDs:</p>
+                            <a class="cid" id="coilgun_cid_v0" href="#">CIDv0</a><br>
+                            <a class="cid" id="coilgun_cid_v1" href="#">CIDv1</a>
+                        </div>
+                    </div>
+                    <div class="cover">
+                        <div class="box">
+                            <img class="researchimage" id="levitation" src="https://ipfs.io/ipfs/bafkreibjegy5gg4mhkuuvlka5f3etmtkyrly5lmqms4catvzubzujmhc74">
+                            <h2>Electromagnetic Levitation</h2>
+                            <p>IPFS CIDs:</p>
+                            <a class="cid" id="levitation_cid_v0" href="#">CIDv0</a><br>
+                            <a class="cid" id="levitation_cid_v1" href="#">CIDv1</a>
+                        </div>
+                        <div class="box">
+                            <img class="researchimage" id="842" src="https://ipfs.io/ipfs/bafkreihyula4liu346ocidesp4qugcxeuvr6wxxdd23b2kh3stbuiikmaq">
+                            <h2>842 Generation 2</h2>
+                            <p>IPFS CIDs:</p>
+                            <a class="cid" id="842_cid_v0" href="#">CIDv0</a><br>
+                            <a class="cid" id="842_cid_v1" href="#">CIDv1</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+
+            <!--Links section ------------------------------------------------------------------------------------------------------>
+
+
+            <section id="links">
+                <h3><br><br></h3>
+                <h2>Links</h2>
+                <h2><br><br></h2>
+                <div class="page_container">
+                    <div class="cover">
+                        <h3>Web2<br></h3>
+                        <h3><br></h3>
+                        <a class="link" id="medium" href="#">Medium</a>
+                        <a class="link" id="youtube" href="#">YouTube</a>
+                        <a class="link" id="twitter" href="#">Twitter</a>
+                        <a class="link" id="github" href="#">GitHub</a>
+                    </div>
+                    <div class="cover">
+                        <h3>Web3<br></h3>
+                        <h3><br></h3>
+                        <a class="link" id="mirror" href="#">Mirror</a>
+                        <a class="link" id="opensea" href="#">Opensea</a>
+                        <a class="link" id="coinbasenft" href="#">Coinbase NFT</a>
+                        <a class="link" id="gitpoap" href="#">GitPOAP</a>
+                    </div>
+                </div>
+                <h2><br><br></h2>
+                <h3><br></h3>
+                <p>v2.1</p>
+                <div class="textlink" id="prevVersion" href="#">Previous Version</div>
+
+            </section>
+
+        </div>
+
+
+        <!---------------------------------------------------JAVASCRIPT--------------------------------------------------->
+
+
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+        <script type="text/javascript">
+
+            // SPDX-License-Identifier: MIT
+
+
+            //Body ------------------------------------------------------------------------------------------------------
+
+
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+
+
+            //Header ------------------------------------------------------------------------------------------------------
+
+
+            //Check if web3 provider is available
+            let provider;
+            if (typeof window.ethereum !== 'undefined') {
+                try{
+                    provider = new ethers.providers.Web3Provider(window.ethereum);
+                } catch (error){
+                    console.error(error);
+                }
+            }
+
+            const connectbutton = document.getElementById("connectbutton");
+
+            const sebastiansupremeAccount = "0x4a7C7eA011d2F38F51f99AE27A8fc9731a6DC4D1";
+
+            let connectedToMetaMask = false;
+            let account;
+            let ens_name;
+            let abbr_account;
+            let balance_wei;
+            let balance_eth;
+
+            //Request account connection
+            function connectAccount(){
+                window.ethereum
+                .request({ method: 'eth_requestAccounts' })
+                .then(accounts => {
+                    account = accounts[0];
+                    connectedToMetaMask = true;
+
+                    updateConnectButton();
+
+                    updateBalance();
+
+                    connectbutton.style.cursor = 'auto';
+                });
+            }
+
+            //Display current account on connectbutton
+            function updateConnectButton(){
+                connectbutton.style["boxShadow"] = "0 0 0px #000";
+                const array = account.toString().split('');
+                abbr_account = array[0] + array[1] + array[2] + array[3] + array[4] + '...' + array[array.length - 4] + array[array.length - 3] + array[array.length - 2] + array[array.length - 1];
+                connectbutton.textContent = abbr_account;
+
+                reverseResolutionENS(account);
+            }
+
+            //Reverse Resolution Ethereum Name Service
+            async function reverseResolutionENS(address){
+                // ethers.js automatically checks that the forward resolution matches.
+                ens_name = await provider.lookupAddress(address);
+
+                if (ens_name != null) {
+                    connectbutton.textContent = ens_name;
+                } else {
+                    connectbutton.textContent = abbr_account;
+                }
+            }
+
+            //Request account balance
+            function updateBalance(){
+                window.ethereum
+                .request({ method: 'eth_getBalance', params: [account, 'latest'] })
+                .then(result => {
+                    balance_wei = parseInt(result);
+                    balance_eth = balance_wei / 10**18;
+                });
+            }
+
+            //Event: Account has changed
+            if (typeof window.ethereum !== 'undefined') {
+                window.ethereum.on('accountsChanged', function (accounts) {
+                    try{
+                        connectAccount();
+                    } catch (error){
+                        console.error(error);
+                    }
+                });
+            }
+
+            //OnClick Listener for connectbutton
+            connectbutton.addEventListener('click', () => {
+                
+                if(connectedToMetaMask == false){
+
+                    //Check if MetaMask is installed
+                    if (typeof window.ethereum !== 'undefined') {
+
+                        try{
+                            connectAccount();
+                        } catch (error){
+                            console.error(error);
+                        }
+
+                    } else {
+                        window.alert("MetaMask is not installed!");
+                    }
+
+                }
+            });
+
+
+            //Home section ------------------------------------------------------------------------------------------------------
+
+
+            const donatebutton = document.getElementById("donatebutton");
+            donatebutton.addEventListener('click', function(e){
+
+                let amount_wei_hex = (parseFloat(document.getElementById('donationInput').value) * 10**18).toString(16);
+
+                //Send ETH
+                if(connectedToMetaMask == true && parseInt(amount_wei_hex, 16) / 10**18 > 0){
+
+                    window.ethereum
+                    .request({
+                    method: 'eth_sendTransaction',
+                    params: [
+                        {
+                        from: account,
+                        to: sebastiansupremeAccount,
+                        value: amount_wei_hex,
+                        },
+                    ],
+                    })
+                    .then((txHash) => console.log(txHash))
+                    .catch((error) => console.error);
+
+                    document.getElementById('donationInput').value = "";
+                    donatebutton.textContent = "Thanks!";
+
+                    /*ripple effect on click*/
+                    let x = e.clientX - e.target.offsetLeft;
+                    let y = e.clientY - e.target.offsetTop;
+                    let ripples = document.createElement('span');
+                    ripples.style.left = x + 'px';
+                    ripples.style.top = y + 'px';
+                    this.appendChild(ripples);
+                    setTimeout(() => {
+                        ripples.remove();
+                    }, 500);
+                    setTimeout(() => {
+                        donatebutton.textContent = "Donate";
+                    }, 5000);
+
+                } else if(connectedToMetaMask == false && parseInt(amount_wei_hex, 16) / 10**18 > 0){
+                    window.alert("Please connect your MetaMask wallet first.");
+                } else if(connectedToMetaMask == true && (parseInt(amount_wei_hex, 16) / 10**18 <= 0 || isNaN(parseInt(amount_wei_hex, 16) / 10**18))){
+                    window.alert("Please select an amount greater than zero though. ;)");
+                } else {
+                    window.alert("Please connect your MetaMask wallet first and select an amount greater than zero.");
+                }
+            })
+
+
+            //Research section ------------------------------------------------------------------------------------------------------
+
+
+            //Open documents through public gateway
+            const thumbnails = document.querySelectorAll(".researchimage");
+            thumbnails.forEach(tmb => {
+                tmb.addEventListener('click', function(e){
+                    
+                    if(tmb.id.toString() == "theory"){
+                        window.open("https://ipfs.io/ipfs/bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju", '_blank').focus();
+                    } else if(tmb.id.toString() == "levitation"){
+                        window.open("https://ipfs.io/ipfs/bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq", '_blank').focus();
+                    } else if(tmb.id.toString() == "coilgun"){
+                        window.open("https://ipfs.io/ipfs/bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u", '_blank').focus();
+                    } else if(tmb.id.toString() == "842"){
+                        window.open("https://ipfs.io/ipfs/bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i", '_blank').focus();
+                    }
+                })
+            })
+                    
+            //Copy CIDs
+            const CIDbutton = document.querySelectorAll(".cid");
+            CIDbutton.forEach(cid => {
+                cid.addEventListener('click', function(e){
+                    
+                    let cid_value = "";
+
+                    if(cid.id.toString() == "theory_cid_v0"){
+                        cid_value = "QmZC9UPFQyzW1YkoTMGNgQ2Jt1Gh4cZFQ3rRJ7dzd6uXfh";
+                    } else if(cid.id.toString() == "theory_cid_v1"){
+                        cid_value = "bafkreib5gty2q7jxhqdqf4wkzq6l7kdubcilbgm22r35phbqwzzkpzseju";
+                    } else if(cid.id.toString() == "levitation_cid_v0"){
+                        cid_value = "Qme77ZFfgq2NSJRDrtFhRs78x8MgUdSRmTtQuDe8vp4h9Z";
+                    } else if(cid.id.toString() == "levitation_cid_v1"){
+                        cid_value = "bafkreidhvewr5u3i4psehcwhigpo466mlrpx23fku47eteo3j3rjbqcsvq";
+                    } else if(cid.id.toString() == "coilgun_cid_v0"){
+                        cid_value = "QmR1nULzHGwEhvqXVWNg9YqX4Fv7gA42qRFFda8xo4VPWw";
+                    } else if(cid.id.toString() == "coilgun_cid_v1"){
+                        cid_value = "bafkreia6ibywaz7sqermyacgphg7znocy2n2wkvgyrsrrpcwmvhfi4tn3u";
+                    } else if(cid.id.toString() == "842_cid_v0"){
+                        cid_value = "QmbGZW2BMLuubmKTc8ex6v8wFbBmzjegJE7W7VU4p24A5t";
+                    } else if(cid.id.toString() == "842_cid_v1"){
+                        cid_value = "bafkreibh3o55zgwefn3fefvkkpwke2mbvc3cchyhjqh6mnnbizu7isoh4i";
+                    }
+
+                    let inputField = document.createElement('input');
+                    inputField.setAttribute('value', cid_value);
+                    document.body.appendChild(inputField);
+                    inputField.select();
+                    document.execCommand("copy");
+                    inputField.parentNode.removeChild(inputField);
+                    let prevContent = cid.textContent.toString();
+                    cid.textContent = "Copied!";
+                    setTimeout(() => {
+                        cid.textContent = prevContent;
+                    }, 500);
+                })
+            })
+
+
+            //Links section ------------------------------------------------------------------------------------------------------
+
+
+            const linkbutton = document.querySelectorAll(".link");
+            linkbutton.forEach(lnk => {
+                lnk.addEventListener('click', function(e){
+                    linkStart();
+                })
+                lnk.addEventListener('auxclick', function(e){
+                    linkStart();
+                })
+
+                function linkStart(){
+                    if(lnk.id.toString() == "medium"){
+                        window.open("https://medium.com/@sebastiansupreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "youtube"){
+                        window.open("https://www.youtube.com/@sebastiansupreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "twitter"){
+                        window.open("https://twitter.com/sebas_supreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "github"){
+                        window.open("https://github.com/SebastianSupreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "mirror"){
+                        window.open("https://mirror.xyz/sebastiansupreme.eth", '_blank').focus();
+                    } else if(lnk.id.toString() == "opensea"){
+                        window.open("https://opensea.io/SebastianSupreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "coinbasenft"){
+                        window.open("https://nft.coinbase.com/@sebastiansupreme", '_blank').focus();
+                    } else if(lnk.id.toString() == "gitpoap"){
+                        window.open("https://www.gitpoap.io/p/sebastiansupreme.eth", '_blank').focus();
+                    }
+                }
+            })
+
+            //Open previous version of the web3site
+            const textlink = document.querySelectorAll(".textlink");
+            textlink.forEach(txtl => {
+                txtl.addEventListener('click', function(e){
+                    if(txtl.id.toString() == "prevVersion"){
+                        window.open("https://ipfs.io/ipfs/bafkreiepnsjntpdhzemtiiz5cm5ufqpb5gzmx7szxsr5jqiar4unmb77dm", '_blank').focus();
+                    }
+                })
+            })
+
+        </script>
+
+    </body>
+
+</html>
