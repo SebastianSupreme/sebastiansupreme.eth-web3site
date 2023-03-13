@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <!---------------------sebastiansupreme.eth web3site v10.4 by Sebastian Supreme (Sebastian Köller)--------------------->
+
+
+    <!--
+    MIT License
+
+    Copyright (c) 2023 Sebastian Supreme
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    -->
+
+
+    <!---------------------------------------------------HTML--------------------------------------------------->
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Profile icon-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeibvg4nozpubelfdfygf6zdfp34oqsgxmaas5oefjslwjz6histbyq/profile%20icon%2060x60.png">
+        <!--Profile picture-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeifbvdptxqjx4mm3jbq26z3ijy2lba3rdznzbbgppfurpg6uq32tly/profile%20picture%20246x246.png">
+        <!--Research documents-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeia2sjwowmsuo7f2oyajp5nciw7aklfzgy4jxmrx3i5hxo3k6wpzja/The%20Theory%20of%20Science.pdf">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeids6a6dn66p6fon577dyq4rstbigjv2phlqwhkf37jqj6b34zkdn4/Electromagnetic%20Levitation.pdf">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeidddkh5tgvxla7cpyzhz5wlsj6jx6ihihbloinfv4lsltc4rm7wrq/Electromagnetic%20Coilgun.pdf">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeibj55cycvyrqnf7fhcihhgh2pvrad3uqyk6rl5lgrniobgmaq6ooe/842%20Generation%202.pdf">
+        <!--Research images-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeicisiznavxt2bchxy7byfzt3o3fgnmi576kacx25qxfjh53pbcn6y/The%20Theory%20of%20Science%20image.png">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeiezzw2dplje3gwookp6vgscmsh36gtw6z7ugpzvblwz6ea757wqma/Electromagnetic%20Levitation%20image.png">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeidgxj7zilvo4bneyhtbup6rzea75gbydpkddyyk5fi6755kglrnie/Electromagnetic%20Coilgun%20image.png">
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeicfbdw6frer4eiuxzghzxavtf4t6thtkxcgxz4zfaritijx6wawfm/842%20Generation%202%20image.png">
+        <!--Text fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Ethers.js library-->
+        <link rel="preconnect" href="https://ipfs.io/ipfs/bafybeibqiqepqyprlqsqiqtasdazahzlg57fcjsj4fmm5tzbqn67xwd274/ethers-5.2.umd.min.js">
+
+        <title>sebastiansupreme.eth</title>
+        <link rel="icon" type="image/x-icon" href="https://ipfs.io/ipfs/bafybeibvg4nozpubelfdfygf6zdfp34oqsgxmaas5oefjslwjz6histbyq/profile%20icon%2060x60.png">
+        <!--Website icon for MetaMask-->
+        <link rel="shortcut icon" href="https://ipfs.io/ipfs/bafybeifbvdptxqjx4mm3jbq26z3ijy2lba3rdznzbbgppfurpg6uq32tly/profile%20picture%20246x246.png">
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+        <!---------------------------------------------------CSS--------------------------------------------------->
+
+
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+                
+            html {
+                max-width: 100%;
+                max-height: 100%;
+                scrollbar-width: none;
+            }
+
+            body {
+                position: fixed;
+                max-width: 100%;
+                max-height: 100%;
+                height: 100%;
+                font-family: "Poppins", sans-serif;
+                background: #040d15;
+                color: #fff;
+                line-height: 1.6;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100vw;
+                height: 100vh;
+                scroll-snap-align: center;
+            }
+
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+
+            
+            /*Header section ------------------------------------------------------------------------------------------------------*/
+
+
+            .container {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+                scroll-behavior: smooth;
+                scroll-snap-type: y proximity;
+            }
+
+            .page-container {
+                display: flex;
+            }
+
+            .cover {
+                width: 50%;
+                height: 100%;
+            }
+
+            header {
+                position: fixed;
+                overflow: visible;
+                z-index: 1;
+                width: 100%;
+                max-width: 100%;
+                top: 0;
+                padding: 0 16px;
+            }
+
+            .header-div {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 60px;
+                overflow: visible;
+            }
+
+            .header-left {
+                position: absolute;
+                left: -12px;
+                display: flex;
+                margin: auto 0;
+            }
+
+            .logo {
+                margin: auto 0;
+                text-decoration: none;
+                font-size: 16px;
+                text-transform: lowercase;
+                letter-spacing: 2px;
+            }
+
+            .image {
+                margin: auto 0;
+                scale: 0.6;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                width: 100%;
+                justify-content: center;
+            }
+
+            ul li {
+                list-style: none;
+                margin: auto 16px;
+                overflow: visible;
+            }
+
+            ul li a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 6px 15px;
+                border-radius: 20px;
+            }
+
+            ul li a:hover {
+                cursor: pointer;
+            }
+
+            .header-right {
+                position: absolute;
+                right: 0;
+                display: flex;
+                height: 100%;
+                margin: auto 0;
+                overflow: visible;
+            }
+
+            .connectbutton {
+                margin: auto 0;
+                cursor: pointer;
+                overflow: visible;
+                padding: 7px 14px;
+                text-decoration: none;
+                font-size: 15px;
+                letter-spacing: 1px;
+                border-radius: 16px;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5), 0 0 0 0 rgba(0, 238, 255, 0.5);
+                transition: box-shadow 0.3s ease;
+                background: linear-gradient(90deg, #0011ff, #00ddff);
+            }
+
+            .connectbutton:hover {
+                box-shadow: 5px -5px 12px 0 rgba(0, 123, 255, 0.5), -5px 5px 12px 0 rgba(0, 238, 255, 0.5);
+            }
+
+
+            /*Home section ------------------------------------------------------------------------------------------------------*/
+
+            
+            section#home input {
+                padding: 5px;
+                border: 2px solid #00ddff;
+                border-radius: 4px;
+                outline: none;
+                resize: none;
+                text-align: center;
+            }
+
+            .donationTextfield {
+                -moz-appearance: textfield;
+            }
+
+            .donationTextfield::placeholder {
+                text-align: center;
+            }
+
+            .donationTextfield::-webkit-inner-spin-button,
+            .donationTextfield::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            section#home a {
+                cursor: pointer;
+                padding: 12px 36px;
+                margin: 10px 0;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5), 0 0 0 0 rgba(0, 238, 255, 0.5);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: linear-gradient(90deg, #0011ff, #00ddff);
+            }
+
+            section#home a:hover {
+                transform: translate(0, -6px);
+                box-shadow: 10px -10px 25px 0 rgba(0, 123, 255, 0.5), -10px 10px 25px 0 rgba(0, 238, 255, 0.5);
+            }
+
+            section#home span {
+                position: absolute;
+                background: #fff;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                border-radius: 50%;
+                animation: animate 0.5s linear infinite;
+            }
+
+            .donation-text {
+                margin: 0 5px;
+            }
+
+            section#home h1 {
+                font-size: 48px;
+                margin-bottom: 48px;
+            }
+
+            section#home h4 {
+                margin-bottom: 24px;
+            }
+
+            form {
+                margin-bottom: 16px;
+            }
+
+            @keyframes animate {
+                0%
+                {
+                    width: 0;
+                    height: 0;
+                    opacity: 0.5;
+                }
+                100%
+                {
+                    width: 500px;
+                    height: 500px;
+                    opacity: 0;
+                }
+            }
+
+
+            /*Research section ------------------------------------------------------------------------------------------------------*/
+
+
+            .researchTitle {
+                margin: 24px 0 24px 0;
+            }
+
+            section#research p {
+                font-size: 13px;
+            }
+
+            section#research a {
+                font-size: 13px;
+                text-decoration: none;
+                color: #00ddff;
+            }
+
+            section#research .box {
+                width: 100%;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            section#research .researchimage:hover {
+                cursor: pointer;
+            }
+
+            .cid {
+                cursor: pointer;
+            }
+
+
+            /*Links section ------------------------------------------------------------------------------------------------------*/
+
+
+            .linksTitle {
+                margin-bottom: 24px;
+            }
+
+            .web2 {
+                margin-bottom: 18px;
+            }
+
+            .web3 {
+                margin-bottom: 18px;
+            }
+
+            section#links a {
+                display: inline-block;
+                width: 80%;
+                padding: 12px 36px;
+                margin: 10px 0;
+                color: #fff;
+                background: #040d15;
+                text-decoration: none;
+                font-size: 18px;
+                letter-spacing: 2px;
+                border-radius: 40px;
+                border: 2px solid #fff;
+                animation: animate3 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            section#links a:hover {
+                color: #040d15;
+                background: #fff;
+                cursor: pointer;
+                animation: animate2 0.2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            section#links p {
+                font-size: 13px;
+            }
+
+            .upper-div {
+                margin-top: auto;
+            }
+
+            .lower-div {
+                margin-top: auto;
+            }
+
+            @keyframes animate2 {
+                0% {
+                    width: 80%;
+                }
+
+                100% {
+                    width: 78%;
+                }
+            }
+
+            @keyframes animate3 {
+                0% {
+                    width: 78%;
+                }
+
+                100% {
+                    width: 80%;
+                }
+            }
+
+
+            @media (min-width: 637px) and (max-width: 960px) {
+
+                .container {
+                    scroll-snap-type: none;
+                }
+
+                ul {
+                    display: none;
+                }
+
+                section#home h1 {
+                    font-size: 38px;
+                }
+
+            }
+
+            @media (min-width: 481px) and (max-width: 636px) {
+
+                .container {
+                    scroll-snap-type: none;
+                }
+
+                ul {
+                    display: none;
+                }
+
+                section#home h1 {
+                    font-size: 38px;
+                }
+
+                section#research {
+                    height: 200vh;
+                }
+
+                .page-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                section#links {
+                    height: 150vh;
+                }
+
+                .cover {
+                    width: 100%;
+                }
+
+                .web3 {
+                    margin-top: 18px;
+                }
+
+            }
+
+            @media (max-width: 480px) {
+
+                .container {
+                    scroll-snap-type: none;
+                }
+
+                .logo {
+                    display: none;
+                }
+
+                ul {
+                    display: none;
+                }
+
+                section#home h1 {
+                    font-size: 28px;
+                }
+
+                section#home h2 {
+                    font-size: 21px;
+                }
+
+                section#home h4 {
+                    font-size: 12px;
+                }
+
+                section#research {
+                    height: 200vh;
+                }
+
+                section#links {
+                    height: 150vh;
+                }
+
+                .page-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .cover {
+                    width: 100%;
+                }
+
+                .web3 {
+                    margin-top: 18px;
+                }
+            }
+
+        </style>
+    </head>
+
+
+    <!---------------------------------------------------HTML--------------------------------------------------->
+
+
+    <body>
+
+
+        <!--Header section------------------------------------------------------------------------------------------------------>
+
+
+        <header>
+            <div class="header-div">
+                <div class="header-left">
+                    <img class="image" src="https://ipfs.io/ipfs/bafybeibvg4nozpubelfdfygf6zdfp34oqsgxmaas5oefjslwjz6histbyq/profile%20icon%2060x60.png">
+                    <b class="logo">sebastiansupreme.eth</b>
+                </div>
+                <ul class="header-center">
+                    <li><a id="home-nav" onclick="scrollToSection('home');">Home</a></li>
+                    <li><a id="research-nav" onclick="scrollToSection('research');">Research</a></li>
+                    <li><a id="links-nav" onclick="scrollToSection('links');">Links</a></li>
+                </ul>
+                <div class="header-right">
+                    <a class="connectbutton" id="connectbutton">Connect Wallet</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+
+
+            <!--Home section------------------------------------------------------------------------------------------------------>
+
+
+            <section id="home">
+                <div>
+                    <img class="image" src="https://ipfs.io/ipfs/bafybeifbvdptxqjx4mm3jbq26z3ijy2lba3rdznzbbgppfurpg6uq32tly/profile%20picture%20246x246.png">
+                </div>
+                <h1>sebastiansupreme.eth</h1>
+                <h2>Welcome to my web3site.</h2>
+                <h4 class="donation-text">Since you're already here, please consider donating. Your support is much appreciated.</h4>
+                <form>
+                    <input id="donationInput" type="number" placeholder="ETH" step="any" class="donationTextfield">
+                </form>
+                <a id="donatebutton">Donate</a>
+
+            </section>
+
+
+            <!--Research section------------------------------------------------------------------------------------------------------>
+
+
+            <section id="research">
+                <h2 class="researchTitle">My Advanced Research</h2>
+                <div class="page-container">
+                    <div class="cover">
+                        <div class="box">
+                            <img class="researchimage" id="theory" src="https://ipfs.io/ipfs/bafybeicisiznavxt2bchxy7byfzt3o3fgnmi576kacx25qxfjh53pbcn6y/The%20Theory%20of%20Science%20image.png">
+                            <h2>The Theory of Science</h2>
+                            <p>IPFS CIDs:</p>
+                            <div>
+                                <a class="cid" id="theory-cid-v0">CIDv0</a>
+                            </div>
+                            <div>
+                                <a class="cid" id="theory-cid-v1">CIDv1</a>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img class="researchimage" id="coilgun" src="https://ipfs.io/ipfs/bafybeidgxj7zilvo4bneyhtbup6rzea75gbydpkddyyk5fi6755kglrnie/Electromagnetic%20Coilgun%20image.png">
+                            <h2>Electromagnetic Coilgun</h2>
+                            <p>IPFS CIDs:</p>
+                            <div>
+                                <a class="cid" id="coilgun-cid-v0">CIDv0</a>
+                            </div>
+                            <div>
+                                <a class="cid" id="coilgun-cid-v1">CIDv1</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cover">
+                        <div class="box">
+                            <img class="researchimage" id="levitation" src="https://ipfs.io/ipfs/bafybeiezzw2dplje3gwookp6vgscmsh36gtw6z7ugpzvblwz6ea757wqma/Electromagnetic%20Levitation%20image.png">
+                            <h2>Electromagnetic Levitation</h2>
+                            <p>IPFS CIDs:</p>
+                            <div>
+                                <a class="cid" id="levitation-cid-v0">CIDv0</a>
+                            </div>
+                            <div>
+                                <a class="cid" id="levitation-cid-v1">CIDv1</a>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img class="researchimage" id="842" src="https://ipfs.io/ipfs/bafybeicfbdw6frer4eiuxzghzxavtf4t6thtkxcgxz4zfaritijx6wawfm/842%20Generation%202%20image.png">
+                            <h2>842 Generation 2</h2>
+                            <p>IPFS CIDs:</p>
+                            <div>
+                                <a class="cid" id="842-cid-v0">CIDv0</a>
+                            </div>
+                            <div>
+                                <a class="cid" id="842-cid-v1">CIDv1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+
+            <!--Links section------------------------------------------------------------------------------------------------------>
+
+
+            <section id="links">
+                <div class="upper-div">
+                    <h2 class="linksTitle">Links</h2>
+                    <div class="page-container">
+                        <div class="cover">
+                            <h3 class="web2">Web2</h3>
+                            <a class="web2-link" id="twitter">Twitter</a>
+                            <a class="web2-link" id="github">GitHub</a>
+                            <a class="web2-link" id="medium">Medium</a>
+                            <a class="web2-link" id="youtube">YouTube</a>
+                        </div>
+                        <div class="cover">
+                            <h3 class="web3">Web3</h3>
+                            <a class="web3-link" id="opensea">Opensea</a>
+                            <a class="web3-link" id="gitpoap">GitPOAP</a>
+                            <a class="web3-link" id="mirror">Mirror</a>
+                            <a class="web3-link" id="ens-domains">ENS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lower-div">
+                    <p class="footnote">© 2023 Sebastian Supreme</p>
+                </div>
+                
+            </section>
+
+        </div>
+
+
+        <!---------------------------------------------------JAVASCRIPT--------------------------------------------------->
+
+
+        <script src="https://ipfs.io/ipfs/bafybeibqiqepqyprlqsqiqtasdazahzlg57fcjsj4fmm5tzbqn67xwd274/ethers-5.2.umd.min.js" type="application/javascript"></script>
+        <script type="text/javascript">
+
+
+            //Header ------------------------------------------------------------------------------------------------------
+
+
+            //Scroll to sections
+            function scrollToSection(id) {
+                document.getElementById(id.toString()).scrollIntoView();
+            }
+            
+            //Header indicator controls
+            var home_observer = new IntersectionObserver(function(entries) {
+                if(entries[0].isIntersecting === true) {
+                    document.getElementById("home-nav").style.color = "#040d15";
+                    document.getElementById("home-nav").style.background = "#fff";
+                } else {
+                    document.getElementById("home-nav").style.color = "#fff";
+                    document.getElementById("home-nav").style.background = null;
+                }
+            }, { threshold: [1] });
+
+            var research_observer = new IntersectionObserver(function(entries) {
+                if(entries[0].isIntersecting === true) {
+                    document.getElementById("research-nav").style.color = "#040d15";
+                    document.getElementById("research-nav").style.background = "#fff";
+                } else {
+                    document.getElementById("research-nav").style.color = "#fff";
+                    document.getElementById("research-nav").style.background = null;
+                }
+            }, { threshold: [1] });
+
+            var links_observer = new IntersectionObserver(function(entries) {
+                if(entries[0].isIntersecting === true) {
+                    document.getElementById("links-nav").style.color = "#040d15";
+                    document.getElementById("links-nav").style.background = "#fff";
+                } else {
+                    document.getElementById("links-nav").style.color = "#fff";
+                    document.getElementById("links-nav").style.background = null;
+                }
+            }, { threshold: [1] });
+
+            home_observer.observe(document.querySelector("#home"));
+            research_observer.observe(document.querySelector("#research"));
+            links_observer.observe(document.querySelector("#links"));
+
+            const connectbutton = document.getElementById("connectbutton");
+            const boxShadow = connectbutton.style["box-shadow"];
+
+            let ethersjs;
+            let connectbuttonClicked = false;
+            let chainIdInitialized = false;
+            let account;
+            let ens;
+
+            //Check if provider is available
+            if (typeof window.ethereum !== "undefined") {
+
+                //Initialize ethers.js provider
+                try{
+                    ethersjs = new ethers.providers.Web3Provider(window.ethereum);
+                } catch (error){
+                    console.error(error);
+                }
+
+                //Set blockchain to Ethereum Mainnet
+                requestChainId();
+
+                //Auto connect
+                window.ethereum.request({ method: 'eth_accounts' })
+                .then((accounts) => {
+                    if(accounts.length > 0) {
+                        connectbuttonClicked = true;
+                        connectAccount();
+                    }
+                })
+                .catch((error) => console.error(error));
+
+                //Event: Account has changed
+                window.ethereum.on("accountsChanged", function (accounts) {
+                    //Account disconnected
+                    if(window.ethereum.selectedAddress == null) {
+                        connectbutton.style["box-shadow"] = boxShadow;
+                        connectbutton.style.cursor = "pointer";
+                        connectbutton.textContent = "Connect Wallet";
+                        account = undefined;
+                        ens = undefined;
+                    } else {
+                        //Account switched
+                        if(!connectbuttonClicked){
+                            try{
+                                connectAccount();
+                            } catch (error){
+                                console.error(error);
+                            }
+                        }
+                        connectbuttonClicked = false;
+                    }
+                });
+
+                //Event: Chain has changed -> switch back to mainnet
+                window.ethereum.on('chainChanged', function (accounts) {
+                    if(chainIdInitialized == true){
+                        window.alert("Please switch to Ethereum Mainnet.");
+                        switchToMainnet();
+                    }
+                });
+            }
+
+            //Request account connection
+            function connectAccount(){
+                if(window.ethereum.isMetaMask){
+                    //Check if Ethereum Mainnet is selected
+                    window.ethereum.request({ method: 'eth_chainId' })
+                    .then((chainId) => {
+                        if(chainId !== "0x1"){
+                            connectbuttonClicked = false;
+                            window.alert("Please switch to Ethereum Mainnet.");
+                            return;
+                        } else {
+                            window.ethereum
+                            .request({ method: 'eth_requestAccounts' })
+                            .then(async (accounts) => {
+                                account = accounts[0];
+                                connectbutton.style["box-shadow"] = "0 0 0 #000";
+                                let array = account.toString().split("");
+                                let abbreviation = array[0] + array[1] + array[2] + array[3] + array[4] + "..." + array[array.length - 4] + array[array.length - 3] + array[array.length - 2] + array[array.length - 1];
+                                connectbutton.textContent = abbreviation;
+
+                                // ethers.js automatically checks that the forward resolution matches.
+                                ens = await ethersjs.lookupAddress(account);
+
+                                if (ens != null) {
+                                    connectbutton.textContent = ens;
+                                } else {
+                                    connectbutton.textContent = abbreviation;
+                                }
+
+                                connectbutton.style.cursor = "auto";
+                            })
+                            .catch((error) => {
+                                connectbuttonClicked = false;
+                                console.error(error);
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        connectbuttonClicked = false;
+                        console.error(error);
+                    });
+                } else {
+                    connectbuttonClicked = false;
+                    window.alert("Please make sure that you only have MetaMask installed/enabled.");
+                }
+            }
+
+            function requestChainId(){
+                window.ethereum.request({ method: 'eth_chainId' })
+                .then((chainId) => {
+                    if(chainId !== "0x1"){
+                        window.alert("Please switch to Ethereum Mainnet.");
+                        switchToMainnet();
+                    } else {
+                        chainIdInitialized = true;
+                    }
+                })
+                .catch((error) => console.error(error));
+            }
+
+            function switchToMainnet(){
+                window.ethereum
+                .request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: "0x1" }],
+                })
+                .then(() => {
+                    window.location.reload();
+                })
+                .catch((error) => {
+                    console.error(error);
+                    switchToMainnet();
+                });
+            }
+
+            //OnClick Listener for connectbutton
+            connectbutton.addEventListener("click", () => {
+                
+                if(typeof account == "undefined"){
+
+                    //Check if MetaMask is installed
+                    if (typeof window.ethereum !== "undefined") {
+
+                        try{
+                            connectbuttonClicked = true;
+                            connectAccount();
+                        } catch (error){
+                            console.error(error);
+                        }
+
+                    } else {
+                        window.alert("MetaMask is not installed!");
+                    }
+
+                }
+            });
+
+
+            //Home section ------------------------------------------------------------------------------------------------------
+
+
+            //Disable pressing enter within textfield
+            document.querySelector("form").addEventListener("submit", function(e) {
+                e.preventDefault();
+            });
+
+            const donatebutton = document.getElementById("donatebutton");
+            donatebutton.addEventListener("click", async function(e){
+
+                let input_value = Number(document.getElementById("donationInput").value);
+                let value_wei;
+                let value_wei_hex;
+
+                try {
+                    value_wei = ethers.utils.parseUnits(input_value.toString());
+                    value_wei_hex = value_wei.toHexString();
+                } catch (error){
+                    console.error(error);
+                }
+
+                //Send ETH
+                if(typeof account !== "undefined" && input_value > 0){
+
+                    document.getElementById("donationInput").value = "";
+                    donatebutton.textContent = "Thanks!";
+
+                    /*ripple effect on click*/
+                    let x = e.clientX - e.target.offsetLeft;
+                    let y = e.clientY - e.target.offsetTop;
+                    let ripples = document.createElement("span");
+                    ripples.style.left = x + "px";
+                    ripples.style.top = y + "px";
+                    this.appendChild(ripples);
+                    setTimeout(() => {
+                        ripples.remove();
+                    }, 500);
+                    setTimeout(() => {
+                        donatebutton.textContent = "Donate";
+                    }, 5000);
+
+                    window.ethereum.request({ method: 'eth_chainId' })
+                    .then(async (chainId) => {
+                        if(chainId !== "0x1"){
+                            window.alert("Please switch to Ethereum Mainnet.");
+                            return;
+                        } else {
+
+                            window.ethereum
+                            .request({
+                            method: 'eth_sendTransaction',
+                            params: [
+                                {
+                                from: account,
+                                to: await ethersjs.resolveName("sebastiansupreme.eth"),
+                                value: value_wei_hex,
+                                },
+                            ],
+                            })
+                            .then((txHash) => window.alert("Transaction Hash: " + txHash))
+                            .catch((error) => console.error(error));
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
+                } else if(typeof account == "undefined" && input_value > 0){
+                    window.alert("Please connect your MetaMask wallet first.");
+                } else if(typeof account !== "undefined" && input_value <= 0){
+                    window.alert("Please select an amount greater than zero.");
+                } else {
+                    window.alert("Please connect your MetaMask wallet first and select an amount greater than zero.");
+                }
+            });
+
+
+            //Research section ------------------------------------------------------------------------------------------------------
+
+
+            //Open documents through public gateway
+            const thumbnails = document.querySelectorAll(".researchimage");
+            thumbnails.forEach(tmb => {
+                tmb.addEventListener("click", function(e){
+                    
+                    if(tmb.id.toString() == "theory"){
+                        window.open("https://ipfs.io/ipfs/bafybeia2sjwowmsuo7f2oyajp5nciw7aklfzgy4jxmrx3i5hxo3k6wpzja/The%20Theory%20of%20Science.pdf", "_blank").focus();
+                    } else if(tmb.id.toString() == "levitation"){
+                        window.open("https://ipfs.io/ipfs/bafybeids6a6dn66p6fon577dyq4rstbigjv2phlqwhkf37jqj6b34zkdn4/Electromagnetic%20Levitation.pdf", "_blank").focus();
+                    } else if(tmb.id.toString() == "coilgun"){
+                        window.open("https://ipfs.io/ipfs/bafybeidddkh5tgvxla7cpyzhz5wlsj6jx6ihihbloinfv4lsltc4rm7wrq/Electromagnetic%20Coilgun.pdf", "_blank").focus();
+                    } else if(tmb.id.toString() == "842"){
+                        window.open("https://ipfs.io/ipfs/bafybeibj55cycvyrqnf7fhcihhgh2pvrad3uqyk6rl5lgrniobgmaq6ooe/842%20Generation%202.pdf", "_blank").focus();
+                    }
+                });
+            });
+                    
+            //Copy CIDs
+            const cidButton = document.querySelectorAll(".cid");
+            cidButton.forEach(cid => {
+                cid.addEventListener("click", function(e){
+
+                    if(cid.textContent.toString() != "Copied!"){
+                    
+                        let cid_value = "";
+
+                        if(cid.id.toString() == "theory-cid-v0"){
+                            cid_value = "QmZC9UPFQyzW1YkoTMGNgQ2Jt1Gh4cZFQ3rRJ7dzd6uXfh";
+                        } else if(cid.id.toString() == "theory-cid-v1"){
+                            cid_value = "bafybeia2sjwowmsuo7f2oyajp5nciw7aklfzgy4jxmrx3i5hxo3k6wpzja";
+                        } else if(cid.id.toString() == "levitation-cid-v0"){
+                            cid_value = "Qme77ZFfgq2NSJRDrtFhRs78x8MgUdSRmTtQuDe8vp4h9Z";
+                        } else if(cid.id.toString() == "levitation-cid-v1"){
+                            cid_value = "bafybeids6a6dn66p6fon577dyq4rstbigjv2phlqwhkf37jqj6b34zkdn4";
+                        } else if(cid.id.toString() == "coilgun-cid-v0"){
+                            cid_value = "QmR1nULzHGwEhvqXVWNg9YqX4Fv7gA42qRFFda8xo4VPWw";
+                        } else if(cid.id.toString() == "coilgun-cid-v1"){
+                            cid_value = "bafybeidddkh5tgvxla7cpyzhz5wlsj6jx6ihihbloinfv4lsltc4rm7wrq";
+                        } else if(cid.id.toString() == "842-cid-v0"){
+                            cid_value = "QmbGZW2BMLuubmKTc8ex6v8wFbBmzjegJE7W7VU4p24A5t";
+                        } else if(cid.id.toString() == "842-cid-v1"){
+                            cid_value = "bafybeibj55cycvyrqnf7fhcihhgh2pvrad3uqyk6rl5lgrniobgmaq6ooe";
+                        }
+
+                        let inputField = document.createElement("input");
+                        inputField.setAttribute("value", cid_value);
+                        document.body.appendChild(inputField);
+                        inputField.select();
+                        document.execCommand("copy");
+                        inputField.parentNode.removeChild(inputField);
+                        let prevContent = cid.textContent.toString();
+                        cid.textContent = "Copied!";
+                        setTimeout(() => {
+                            cid.textContent = prevContent;
+                        }, 500);
+                    }
+                });
+            });
+
+
+            //Links section ------------------------------------------------------------------------------------------------------
+
+
+            //Open web2 links
+            const web2_links = document.querySelectorAll(".web2-link");
+            web2_links.forEach(lnk2 => {
+                lnk2.addEventListener("click", function(e){
+                    
+                    if(lnk2.id.toString() == "twitter"){
+                        window.open("https://twitter.com/0xSebSup", "_blank").focus();
+                    } else if(lnk2.id.toString() == "github"){
+                        window.open("https://github.com/SebastianSupreme", "_blank").focus();
+                    } else if(lnk2.id.toString() == "medium"){
+                        window.open("https://medium.com/@sebastiansupreme", "_blank").focus();
+                    } else if(lnk2.id.toString() == "youtube"){
+                        window.open("https://youtube.com/@sebastiansupreme", "_blank").focus();
+                    }
+                });
+            });
+
+            //Open web3 links
+            const web3_links = document.querySelectorAll(".web3-link");
+            web3_links.forEach(lnk3 => {
+                lnk3.addEventListener("click", function(e){
+                    
+                    if(lnk3.id.toString() == "opensea"){
+                        window.open("https://opensea.io/SebastianSupreme", "_blank").focus();
+                    } else if(lnk3.id.toString() == "gitpoap"){
+                        window.open("https://gitpoap.io/p/sebastiansupreme.eth", "_blank").focus();
+                    } else if(lnk3.id.toString() == "mirror"){
+                        window.open("https://mirror.xyz/sebastiansupreme.eth", "_blank").focus();
+                    } else if(lnk3.id.toString() == "ens-domains"){
+                        window.open("https://app.ens.domains/address/0x4a7C7eA011d2F38F51f99AE27A8fc9731a6DC4D1", "_blank").focus();
+                    }
+                });
+            });
+
+        </script>
+
+    </body>
+
+</html>
